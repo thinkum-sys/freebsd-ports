@@ -15,7 +15,7 @@ COMMENT=	Sophisticated scripter based on Tcl/Tk
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USES=		tcl:tea autoreconf
+USES=		tcl:85,86,tea autoreconf
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
