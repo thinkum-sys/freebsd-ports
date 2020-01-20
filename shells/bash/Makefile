@@ -22,17 +22,20 @@ COMMENT=		GNU Project's Bourne Again SHell
 LICENSE=		GPLv3+
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=		FDESCFS HELP NLS STATIC SYSBASHRC SYSLOG DOCS
+OPTIONS_DEFINE=		FDESCFS HELP NLS STATIC SYSBASHRC SYSLOG DOCS NCURSES
 FDESCFS_DESC=		Enable use of /dev/fd
 HELP_DESC=		Enable builtin help
 SYSBASHRC_DESC=		Enable system-wide rc files
 
-OPTIONS_DEFAULT=	HELP
+OPTIONS_DEFAULT=	HELP NCURSES
 
-USES=			bison cpe iconv makeinfo pathfix localbase
+USES=			bison cpe iconv:wchar_t makeinfo pathfix localbase
 GNU_CONFIGURE=		yes
 OPTIONS_SUB=		yes
 CPE_VENDOR=		gnu
+
+LIBS+=			${ICONV_LIB} -L${ICONV_LIB_PATH}
+CFLAGS+=		-I${ICONV_INCLUDE_PATH}
 
 FDESCFS_CONFIGURE_ENV_OFF=	bash_cv_dev_fd=absent
 FDESCFS_SUB_FILES=	pkg-message
@@ -40,6 +43,10 @@ FDESCFS_SUB_FILES=	pkg-message
 HELP_CONFIGURE_ENABLE=	help-builtin
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+
+NCURSES_USES=		ncurses
+NCURSES_LIBS=		-L${NCURSESLIB} -lncurses
+NCURSES_CFLAGS+=	-I${NCURSESINC}
 
 INFO=			bash
 
@@ -58,6 +65,11 @@ CONFLICTS+=		bash-[0-9]*
 .endif
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNCURSES}
+CONFIGURE_ARGS+=	--with-curses
+CONFIGURE_ENV+= 	LIBS=${LIBS:Q}
+.endif
 
 .if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:tl} != "no")
 CONFIGURE_ARGS+=	--enable-static-link
