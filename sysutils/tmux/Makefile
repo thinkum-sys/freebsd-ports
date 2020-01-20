@@ -46,6 +46,9 @@ LIBEVENT_STATIC_VARS=	LESTATIC=${LOCALBASE}/lib/libevent.a
 UTF8PROC_CONFIGURE_ENABLE=	utf8proc
 UTF8PROC_LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc
 
+LIBS=		-L${NCURSESLIB} -lncurses
+CFLAGS+=	-I${NCURSESINC}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/tmux.conf|${PREFIX}/etc/tmux.conf|g' ${WRKSRC}/CHANGES \
 		${WRKSRC}/tmux.h
