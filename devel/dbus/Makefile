@@ -18,7 +18,9 @@ PORTSCOUT=	limitw:1,even
 USES=		cpe gmake libtool localbase pkgconfig python:build shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+DBUS_SOCKDIR?=	${TMPDIR}
 CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
+		--with-session-socket-dir=${DBUS_SOCKDIR} \
 		--disable-doxygen-docs \
 		--disable-selinux \
 		--disable-apparmor \
