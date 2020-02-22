@@ -34,7 +34,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scour>0:textproc/py-scour@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib cmake cpe desktop-file-utils gnome \
-		iconv:wchar_t jpeg pathfix pkgconfig python:2.7 \
+		iconv:wchar_t jpeg pathfix pkgconfig python \
 		shebangfix tar:bzip2 xorg
 USE_GNOME=	gtkmm24 libxml2 libxslt
 USE_XORG=	x11
