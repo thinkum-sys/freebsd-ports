@@ -86,9 +86,9 @@ SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 
 .include <bsd.port.pre.mk>
 
-.if ${LLVM_DEFAULT:S,-devel,990,} >= 90
-LLVM_DEFAULT=	80
-.endif
+# .if ${LLVM_DEFAULT:S,-devel,990,} >= 90
+# LLVM_DEFAULT=	80
+# .endif
 
 post-patch:
 # Fix paths for gnuplot and ant.
