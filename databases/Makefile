@@ -67,7 +67,6 @@
     SUBDIR += elixir-mongo
     SUBDIR += elixir-postgrex
     SUBDIR += elixir-timex_ecto
-    SUBDIR += emma
     SUBDIR += erlang-couchbeam
     SUBDIR += erlang-epgsql
     SUBDIR += erlang-eredis
@@ -127,11 +126,9 @@
     SUBDIR += kexi
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
-    SUBDIR += ldb
-    SUBDIR += ldb12
-    SUBDIR += ldb13
     SUBDIR += ldb14
     SUBDIR += ldb15
+    SUBDIR += ldb20
     SUBDIR += leo_center
     SUBDIR += leofs
     SUBDIR += leveldb
@@ -185,15 +182,10 @@
     SUBDIR += mariadb103-server
     SUBDIR += mariadb104-client
     SUBDIR += mariadb104-server
-    SUBDIR += mariadb55-client
-    SUBDIR += mariadb55-server
     SUBDIR += mdbtools
     SUBDIR += mdcached
     SUBDIR += memcached
     SUBDIR += memcacheq
-    SUBDIR += monetdb
-    SUBDIR += mongodb34
-    SUBDIR += mongodb34-tools
     SUBDIR += mongodb36
     SUBDIR += mongodb36-tools
     SUBDIR += mongodb40
@@ -597,11 +589,11 @@
     SUBDIR += pglogical
     SUBDIR += pgmetrics
     SUBDIR += pgmodeler
-    SUBDIR += pgpool
     SUBDIR += pgpool-II-35
     SUBDIR += pgpool-II-36
     SUBDIR += pgpool-II-37
     SUBDIR += pgpool-II-40
+    SUBDIR += pgpool-II-41
     SUBDIR += pgreplay
     SUBDIR += pgroonga
     SUBDIR += pgrouting
@@ -611,7 +603,6 @@
     SUBDIR += pgtop
     SUBDIR += pgtune
     SUBDIR += pguri
-    SUBDIR += pgworksheet
     SUBDIR += php-tarantool
     SUBDIR += php-xapian
     SUBDIR += php72-dba
@@ -762,9 +753,7 @@
     SUBDIR += py-bsddb3
     SUBDIR += py-carbon
     SUBDIR += py-cassandra-driver
-    SUBDIR += py-cdb
     SUBDIR += py-couchdb
-    SUBDIR += py-cql
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
     SUBDIR += py-django-transaction-hooks
@@ -792,6 +781,7 @@
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-mysqlclient
     SUBDIR += py-oursql
+    SUBDIR += py-partd
     SUBDIR += py-peewee
     SUBDIR += py-peewee_migrate
     SUBDIR += py-pg8000
@@ -818,7 +808,6 @@
     SUBDIR += py-pymysql
     SUBDIR += py-pyodbc
     SUBDIR += py-pypuppetdb
-    SUBDIR += py-pypuppetdb03
     SUBDIR += py-pytc
     SUBDIR += py-python-arango
     SUBDIR += py-python-memcached
@@ -834,6 +823,7 @@
     SUBDIR += py-sispy
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy-migrate
+    SUBDIR += py-sqlalchemy-utils
     SUBDIR += py-sqlalchemy10
     SUBDIR += py-sqlalchemy11
     SUBDIR += py-sqlalchemy12
@@ -970,7 +960,6 @@
     SUBDIR += rubygem-paranoia
     SUBDIR += rubygem-peek-mysql2-rails5
     SUBDIR += rubygem-peek-pg-rails5
-    SUBDIR += rubygem-peek-pg-rails52
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-pg0
     SUBDIR += rubygem-pg018
@@ -987,6 +976,7 @@
     SUBDIR += rubygem-redis-actionpack-rails5
     SUBDIR += rubygem-redis-actionpack-rails50
     SUBDIR += rubygem-redis-actionpack-rails52
+    SUBDIR += rubygem-redis-actionpack-rails60
     SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-seed-fu
     SUBDIR += rubygem-sqlite3
@@ -1029,7 +1019,6 @@
     SUBDIR += tcl-lmdb
     SUBDIR += tcl-sqlite3
     SUBDIR += tdb
-    SUBDIR += tdb1
     SUBDIR += tdbc
     SUBDIR += tile38
     SUBDIR += tiledb
@@ -1056,6 +1045,5 @@
     SUBDIR += xrootd
     SUBDIR += xtrabackup
     SUBDIR += zabbix3-libzbxpgsql
-    SUBDIR += zodb3
 
 .include <bsd.port.subdir.mk>

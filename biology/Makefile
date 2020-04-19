@@ -43,6 +43,7 @@
     SUBDIR += freebayes
     SUBDIR += garlic
     SUBDIR += gatk
+    SUBDIR += gcta
     SUBDIR += gemma
     SUBDIR += gff2ps
     SUBDIR += gmap
@@ -68,6 +69,7 @@
     SUBDIR += libbigwig
     SUBDIR += libgtextutils
     SUBDIR += libsbml
+    SUBDIR += linux-foldingathome
     SUBDIR += mafft
     SUBDIR += mapm3
     SUBDIR += migrate

@@ -82,6 +82,7 @@
     SUBDIR += mikutter
     SUBDIR += mtxclient
     SUBDIR += mu-conference
+    SUBDIR += nextcloud-talk
     SUBDIR += nheko
     SUBDIR += openfire
     SUBDIR += oysttyer
@@ -152,9 +153,11 @@
     SUBDIR += sayaka
     SUBDIR += scudcloud
     SUBDIR += sendxmpp
+    SUBDIR += signal-cli
     SUBDIR += slack-term
     SUBDIR += spectral
     SUBDIR += ssh-chat
+    SUBDIR += sshout
     SUBDIR += talkatu
     SUBDIR += teamwords
     SUBDIR += telegram
@@ -183,6 +186,7 @@
     SUBDIR += toxbot
     SUBDIR += toxic
     SUBDIR += toxins
+    SUBDIR += tut
     SUBDIR += twirssi
     SUBDIR += twitmail
     SUBDIR += uTox

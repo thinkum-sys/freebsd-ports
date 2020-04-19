@@ -23,6 +23,7 @@
     SUBDIR += R-cran-dygraphs
     SUBDIR += R-cran-farver
     SUBDIR += R-cran-ggplot2
+    SUBDIR += R-cran-ggrepel
     SUBDIR += R-cran-gridBase
     SUBDIR += R-cran-gridExtra
     SUBDIR += R-cran-munsell
@@ -66,6 +67,7 @@
     SUBDIR += barbecue
     SUBDIR += barcode
     SUBDIR += batik
+    SUBDIR += birdfont
     SUBDIR += bitmap
     SUBDIR += blend2d
     SUBDIR += blender
@@ -97,7 +99,6 @@
     SUBDIR += colord
     SUBDIR += colord-gtk
     SUBDIR += comical
-    SUBDIR += commons-utilities
     SUBDIR += compupic
     SUBDIR += converseen
     SUBDIR += cosmoplayer
@@ -133,7 +134,6 @@
     SUBDIR += djvusmooth
     SUBDIR += dmtx-utils
     SUBDIR += drawpile
-    SUBDIR += driconf
     SUBDIR += drm-current-kmod
     SUBDIR += drm-devel-kmod
     SUBDIR += drm-fbsd11.2-kmod
@@ -146,6 +146,8 @@
     SUBDIR += dynamechs
     SUBDIR += ebsynth
     SUBDIR += edje_viewer
+    SUBDIR += egl-wayland
+    SUBDIR += eglexternalplatform
     SUBDIR += electricsheep
     SUBDIR += embree
     SUBDIR += enblend
@@ -154,6 +156,7 @@
     SUBDIR += eog
     SUBDIR += eog-plugins
     SUBDIR += eom
+    SUBDIR += eos-movrec
     SUBDIR += epdfview
     SUBDIR += ephoto
     SUBDIR += epix
@@ -239,7 +242,6 @@
     SUBDIR += gimp-beautify-plugin
     SUBDIR += gimp-data-extras
     SUBDIR += gimp-gmic-plugin
-    SUBDIR += gimp-help
     SUBDIR += gimp-lensfun-plugin
     SUBDIR += gimp-lqr-plugin
     SUBDIR += gimp-refocus-plugin
@@ -320,9 +322,11 @@
     SUBDIR += gtkam
     SUBDIR += gts
     SUBDIR += guetzli
+    SUBDIR += guile-cairo
     SUBDIR += guilib
     SUBDIR += gwenview
     SUBDIR += hdr_tools
+    SUBDIR += heimer
     SUBDIR += hiptext
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
@@ -338,6 +342,7 @@
     SUBDIR += ida
     SUBDIR += iec16022
     SUBDIR += iiview
+    SUBDIR += ikona
     SUBDIR += ilmbase
     SUBDIR += imageindex
     SUBDIR += imageviewer
@@ -375,6 +380,7 @@
     SUBDIR += kamera
     SUBDIR += kamerka
     SUBDIR += kcolorchooser
+    SUBDIR += kcolorpicker
     SUBDIR += kdegraphics
     SUBDIR += kdegraphics-mobipocket
     SUBDIR += kdegraphics-svgpart
@@ -385,6 +391,7 @@
     SUBDIR += kf5-kquickcharts
     SUBDIR += kf5-prison
     SUBDIR += kgraphviewer
+    SUBDIR += kimageannotator
     SUBDIR += kimagemapeditor
     SUBDIR += kipi-plugins
     SUBDIR += kix-kmod
@@ -521,6 +528,7 @@
     SUBDIR += mapserver
     SUBDIR += mapyrus
     SUBDIR += megapov
+    SUBDIR += meh
     SUBDIR += mesa-demos
     SUBDIR += mesa-dri
     SUBDIR += mesa-libs
@@ -541,8 +549,8 @@
     SUBDIR += mxp
     SUBDIR += mypaint
     SUBDIR += mypaint-brushes
+    SUBDIR += mypaint-brushes2
     SUBDIR += nanosvg
-    SUBDIR += nathive
     SUBDIR += netpbm
     SUBDIR += nip2
     SUBDIR += nomacs
@@ -553,7 +561,6 @@
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad
-    SUBDIR += ocre
     SUBDIR += ogre3d
     SUBDIR += ogre3d19
     SUBDIR += oidn
@@ -693,6 +700,7 @@
     SUBDIR += p5-ming
     SUBDIR += panoglview
     SUBDIR += panomatic
+    SUBDIR += pastel
     SUBDIR += pcl-pointclouds
     SUBDIR += pdf2svg
     SUBDIR += pdfpc
@@ -779,7 +787,6 @@
     SUBDIR += py-OWSLib
     SUBDIR += py-PyOpenGL
     SUBDIR += py-PyOpenGL-accelerate
-    SUBDIR += py-PyX
     SUBDIR += py-actdiag
     SUBDIR += py-blockdiag
     SUBDIR += py-blockdiagcontrib-cisco
@@ -787,13 +794,14 @@
     SUBDIR += py-cairocffi
     SUBDIR += py-cairosvg
     SUBDIR += py-cartopy
-    SUBDIR += py-chart
     SUBDIR += py-colour
     SUBDIR += py-descartes
     SUBDIR += py-django-easy-thumbnails
     SUBDIR += py-djvulibre
     SUBDIR += py-editobj
     SUBDIR += py-exifread
+    SUBDIR += py-face_recognition
+    SUBDIR += py-face_recognition_models
     SUBDIR += py-fiona
     SUBDIR += py-freeimagepy
     SUBDIR += py-gdal
@@ -803,7 +811,7 @@
     SUBDIR += py-gizeh
     SUBDIR += py-glewpy
     SUBDIR += py-glfw
-    SUBDIR += py-goocanvas
+    SUBDIR += py-glooey
     SUBDIR += py-gphoto2
     SUBDIR += py-graph-core
     SUBDIR += py-graphviz
@@ -818,7 +826,6 @@
     SUBDIR += py-leather
     SUBDIR += py-mapclassify
     SUBDIR += py-mayavi
-    SUBDIR += py-mcomix
     SUBDIR += py-ming
     SUBDIR += py-mpl-scatter-density
     SUBDIR += py-nwdiag
@@ -829,6 +836,7 @@
     SUBDIR += py-openimageio
     SUBDIR += py-photocollage
     SUBDIR += py-pillow
+    SUBDIR += py-pillow6
     SUBDIR += py-pivy
     SUBDIR += py-plotly
     SUBDIR += py-png
@@ -842,7 +850,7 @@
     SUBDIR += py-pyganim
     SUBDIR += py-pygeoapi
     SUBDIR += py-pyglet
-    SUBDIR += py-pyglet12
+    SUBDIR += py-pyglet150
     SUBDIR += py-pygooglechart
     SUBDIR += py-pygraphviz
     SUBDIR += py-pyinsane2
@@ -854,19 +862,21 @@
     SUBDIR += py-pyrsgis
     SUBDIR += py-python-poppler-qt5
     SUBDIR += py-pyvips
+    SUBDIR += py-pyx
     SUBDIR += py-qt5-svg
     SUBDIR += py-rawkit
     SUBDIR += py-sane
     SUBDIR += py-scikit-image
     SUBDIR += py-seqdiag
     SUBDIR += py-sorl-thumbnail
-    SUBDIR += py-soya3d
     SUBDIR += py-spectra
     SUBDIR += py-stltools
+    SUBDIR += py-svg.path
     SUBDIR += py-svgwrite
     SUBDIR += py-termtosvg
     SUBDIR += py-toyplot
     SUBDIR += py-traitsui
+    SUBDIR += py-vecrec
     SUBDIR += py-visvis
     SUBDIR += py-wand
     SUBDIR += py-webcolors
@@ -950,7 +960,6 @@
     SUBDIR += sampleicc
     SUBDIR += sane-backends
     SUBDIR += sane-epkowa
-    SUBDIR += sane-frontends
     SUBDIR += scale2x
     SUBDIR += scantailor
     SUBDIR += scr2png
@@ -964,6 +973,7 @@
     SUBDIR += sdl_ttf
     SUBDIR += sdump
     SUBDIR += seejpeg
+    SUBDIR += seexpr
     SUBDIR += sekrit-twc-zimg
     SUBDIR += seom
     SUBDIR += separate
@@ -995,6 +1005,7 @@
     SUBDIR += sxiv
     SUBDIR += synaesthesia
     SUBDIR += synfigstudio
+    SUBDIR += tachyon
     SUBDIR += telak
     SUBDIR += tesseract
     SUBDIR += tesseract-data
@@ -1012,11 +1023,11 @@
     SUBDIR += tkpng
     SUBDIR += togl
     SUBDIR += ttygif
+    SUBDIR += ttyplot
     SUBDIR += tumble
     SUBDIR += tweeny
     SUBDIR += ufraw
     SUBDIR += uniconvertor
-    SUBDIR += uniconvw
     SUBDIR += unpaper
     SUBDIR += urho3d
     SUBDIR += urt

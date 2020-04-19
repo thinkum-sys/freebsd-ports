@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	code_saturne
-PORTVERSION=	6.0.1
+PORTVERSION=	6.0.2
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	science parallel
@@ -13,6 +13,7 @@ COMMENT=	EDF's general purpose Computational Fluid Dynamics (CFD) software
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo	\
 		libcgns.so:science/cgnslib	\
 		libhdf5.so:science/hdf5		\
@@ -35,6 +36,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-salome --without-salome-yacs --without-salome-kernel	\
 		--without-salome-gui
+CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python=${PYTHON_CMD} \
 		pyrcc5=pyrcc5-${PYTHON_VER} \
@@ -75,11 +77,6 @@ TERM?=		vt100	# Default value needed for tput in jail or tinderbox
 CONFIGURE_ARGS+=	--disable-openmp
 .endif
 
-.if ${OPSYS} == FreeBSD && ((${OSREL:R} == 12 && ${OSVERSION} < 1200506)	\
-			|| (${OSREL:R} == 11 && ${OSVERSION} < 346296))
-BROKEN=	at least openmp 8.0.0 final release is needed
-.endif
-
 .if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	tex:build
 BUILD_DEPENDS+=	fig2dev:print/transfig		\
@@ -106,6 +103,6 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

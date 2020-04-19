@@ -301,7 +301,6 @@
     SUBDIR += galaxyhack
     SUBDIR += garden-of-coloured-lights
     SUBDIR += gbrainy
-    SUBDIR += gcompris
     SUBDIR += gcompris-qt
     SUBDIR += gemdropx
     SUBDIR += gemrb
@@ -480,6 +479,9 @@
     SUBDIR += liblcf
     SUBDIR += libmaitretarot
     SUBDIR += libmt_client
+    SUBDIR += libretro-core-info
+    SUBDIR += libretro-shaders-glsl
+    SUBDIR += libretro-shaders-slang
     SUBDIR += libshhcards
     SUBDIR += libtmcg
     SUBDIR += lightsoff
@@ -532,7 +534,6 @@
     SUBDIR += maelstrom
     SUBDIR += magiccube4d
     SUBDIR += magicmaze
-    SUBDIR += magicor
     SUBDIR += mahjong
     SUBDIR += maitretarot
     SUBDIR += manaplus
@@ -622,7 +623,6 @@
     SUBDIR += oonsoo
     SUBDIR += open-adventure
     SUBDIR += openage
-    SUBDIR += openalchemist
     SUBDIR += openarena
     SUBDIR += openarena-data
     SUBDIR += openarena-oax
@@ -704,6 +704,7 @@
     SUBDIR += pmars
     SUBDIR += pmars-sdl
     SUBDIR += poker-eval
+    SUBDIR += pokerth
     SUBDIR += polyglot
     SUBDIR += pongix
     SUBDIR += ponscripter-sekai
@@ -719,14 +720,15 @@
     SUBDIR += puckman
     SUBDIR += pushover
     SUBDIR += pvpgn
+    SUBDIR += py-cbeams
     SUBDIR += py-fife
     SUBDIR += py-mnemosyne
+    SUBDIR += py-pychess
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
     SUBDIR += pyfa
     SUBDIR += pysolfc
     SUBDIR += pyspacewar
-    SUBDIR += pythonsudoku
     SUBDIR += q2p
     SUBDIR += q2pro
     SUBDIR += q3cellshading
@@ -780,6 +782,7 @@
     SUBDIR += rescue
     SUBDIR += residualvm
     SUBDIR += retroarch
+    SUBDIR += retroarch-assets
     SUBDIR += rezerwar
     SUBDIR += rfksay
     SUBDIR += ri-li

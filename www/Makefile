@@ -13,10 +13,12 @@
     SUBDIR += R-cran-rvest
     SUBDIR += R-cran-scrapeR
     SUBDIR += R-cran-selectr
+    SUBDIR += R-cran-servr
     SUBDIR += R-cran-shiny
     SUBDIR += Stikked
     SUBDIR += UniversalFeedCreator
     SUBDIR += ach
+    SUBDIR += adguardhome
     SUBDIR += adzap
     SUBDIR += alef-webfont
     SUBDIR += amphetadesk
@@ -32,6 +34,7 @@
     SUBDIR += archiva
     SUBDIR += aria2
     SUBDIR += asql
+    SUBDIR += authelia
     SUBDIR += awffull
     SUBDIR += aws
     SUBDIR += aws-demos
@@ -85,6 +88,7 @@
     SUBDIR += colly
     SUBDIR += coppermine
     SUBDIR += cplanet
+    SUBDIR += cpp-httplib
     SUBDIR += cpr
     SUBDIR += crawl
     SUBDIR += crp
@@ -107,6 +111,7 @@
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
     SUBDIR += dokuwiki
+    SUBDIR += dolibarr
     SUBDIR += domoticz
     SUBDIR += drood
     SUBDIR += drraw
@@ -272,6 +277,7 @@
     SUBDIR += kannel
     SUBDIR += kannel-sqlbox
     SUBDIR += kcgi
+    SUBDIR += kdsoap
     SUBDIR += kf5-kdewebkit
     SUBDIR += kf5-khtml
     SUBDIR += kf5-kjs
@@ -293,11 +299,13 @@
     SUBDIR += libnghttp2
     SUBDIR += libnghttp3
     SUBDIR += libresonic-standalone
+    SUBDIR += librtcdcpp
     SUBDIR += libwpe
     SUBDIR += libwww
     SUBDIR += lightsquid
     SUBDIR += lighttpd
     SUBDIR += lighttpd-mod_h264_streaming
+    SUBDIR += limesurvey
     SUBDIR += linkcheck
     SUBDIR += linklint
     SUBDIR += links
@@ -311,6 +319,7 @@
     SUBDIR += lua-resty-core
     SUBDIR += lua-resty-lrucache
     SUBDIR += luakit
+    SUBDIR += luakit-devel
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += madsonic
@@ -447,13 +456,13 @@
     SUBDIR += nginx-lite
     SUBDIR += nginx-naxsi
     SUBDIR += nginx-prometheus-exporter
+    SUBDIR += nginx-ultimate-bad-bot-blocker
     SUBDIR += nginx-vts-exporter
     SUBDIR += nibbleblog
     SUBDIR += nift
     SUBDIR += node
     SUBDIR += node10
     SUBDIR += node12
-    SUBDIR += node8
     SUBDIR += nostromo
     SUBDIR += novnc
     SUBDIR += novnc-websockify
@@ -462,7 +471,6 @@
     SUBDIR += npm
     SUBDIR += npm-node10
     SUBDIR += npm-node12
-    SUBDIR += npm-node8
     SUBDIR += nspluginwrapper
     SUBDIR += obhttpd
     SUBDIR += onionbalance
@@ -943,6 +951,7 @@
     SUBDIR += p5-HTTP-Thin
     SUBDIR += p5-HTTP-Throwable
     SUBDIR += p5-HTTP-Tiny
+    SUBDIR += p5-HTTP-Tiny-Multipart
     SUBDIR += p5-HTTP-Tiny-SPDY
     SUBDIR += p5-HTTP-Tiny-UA
     SUBDIR += p5-HTTP-WebTest
@@ -956,6 +965,7 @@
     SUBDIR += p5-Interchange6
     SUBDIR += p5-JE
     SUBDIR += p5-JSON-API
+    SUBDIR += p5-JSON-WebToken
     SUBDIR += p5-Jemplate
     SUBDIR += p5-Jifty
     SUBDIR += p5-LWP-Authen-Negotiate
@@ -1383,9 +1393,7 @@
     SUBDIR += phpsysinfo
     SUBDIR += phpvirtualbox
     SUBDIR += piwigo
-    SUBDIR += planet
     SUBDIR += plasma5-plasma-browser-integration
-    SUBDIR += plexwatchweb
     SUBDIR += plugger
     SUBDIR += pmwiki
     SUBDIR += pnews
@@ -1410,6 +1418,7 @@
     SUBDIR += py-aiohttp
     SUBDIR += py-aiohttp-wsgi
     SUBDIR += py-aiohttp2
+    SUBDIR += py-aiohttp_cors
     SUBDIR += py-albatross
     SUBDIR += py-amf
     SUBDIR += py-apachelog
@@ -1432,6 +1441,7 @@
     SUBDIR += py-bottle-cork
     SUBDIR += py-branca
     SUBDIR += py-cachecontrol
+    SUBDIR += py-cachelib
     SUBDIR += py-caldav
     SUBDIR += py-cheroot
     SUBDIR += py-cherrypy
@@ -1454,7 +1464,6 @@
     SUBDIR += py-dj22-django-formset-js-improved
     SUBDIR += py-dj22-django-jquery-js
     SUBDIR += py-dj22-django-js-asset
-    SUBDIR += py-dj22-django-jsonfield2
     SUBDIR += py-dj22-django-model-utils
     SUBDIR += py-dj22-django-mptt
     SUBDIR += py-dj22-django-prometheus
@@ -1468,6 +1477,8 @@
     SUBDIR += py-dj22-djangoql
     SUBDIR += py-dj22-djangorestframework
     SUBDIR += py-dj22-drf-yasg
+    SUBDIR += py-dj22-jsonfield
+    SUBDIR += py-dj22-jsonfield2
     SUBDIR += py-dj22-swapper
     SUBDIR += py-django
     SUBDIR += py-django-allauth
@@ -1486,7 +1497,6 @@
     SUBDIR += py-django-braces
     SUBDIR += py-django-bulk-update
     SUBDIR += py-django-cacheops
-    SUBDIR += py-django-caching-app-plugins
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
     SUBDIR += py-django-common-helpers
@@ -1500,6 +1510,7 @@
     SUBDIR += py-django-crispy-forms
     SUBDIR += py-django-cron
     SUBDIR += py-django-datetime-widget
+    SUBDIR += py-django-debreach
     SUBDIR += py-django-debug-toolbar
     SUBDIR += py-django-dpaste
     SUBDIR += py-django-evolution
@@ -1509,6 +1520,7 @@
     SUBDIR += py-django-formtools
     SUBDIR += py-django-guardian
     SUBDIR += py-django-happenings
+    SUBDIR += py-django-happenings-update
     SUBDIR += py-django-haystack
     SUBDIR += py-django-hierarkey
     SUBDIR += py-django-hijack
@@ -1517,7 +1529,6 @@
     SUBDIR += py-django-js-asset
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-jsonfield
-    SUBDIR += py-django-jsonfield2
     SUBDIR += py-django-ldapdb
     SUBDIR += py-django-libsass
     SUBDIR += py-django-markdownx
@@ -1534,9 +1545,11 @@
     SUBDIR += py-django-otp
     SUBDIR += py-django-otp-yubikey
     SUBDIR += py-django-overextends
+    SUBDIR += py-django-pglocks
     SUBDIR += py-django-photologue
     SUBDIR += py-django-picklefield
     SUBDIR += py-django-pipeline
+    SUBDIR += py-django-polymorphic
     SUBDIR += py-django-post_office
     SUBDIR += py-django-profiles
     SUBDIR += py-django-prometheus
@@ -1577,7 +1590,6 @@
     SUBDIR += py-django30
     SUBDIR += py-django_compressor
     SUBDIR += py-django_openstack_auth
-    SUBDIR += py-django_polymorphic
     SUBDIR += py-djangocms-admin-style
     SUBDIR += py-djangorestframework
     SUBDIR += py-djangorestframework-csv
@@ -1631,6 +1643,7 @@
     SUBDIR += py-formalchemy
     SUBDIR += py-formencode
     SUBDIR += py-frappe-bench
+    SUBDIR += py-freenit
     SUBDIR += py-frozen-flask
     SUBDIR += py-funkload
     SUBDIR += py-gandi.cli
@@ -1674,6 +1687,7 @@
     SUBDIR += py-internetarchive
     SUBDIR += py-jonpy
     SUBDIR += py-jsonfield
+    SUBDIR += py-jsonfield2
     SUBDIR += py-kallithea
     SUBDIR += py-lektor
     SUBDIR += py-lesscpy
@@ -1699,8 +1713,6 @@
     SUBDIR += py-prawcore
     SUBDIR += py-priority
     SUBDIR += py-puppetboard
-    SUBDIR += py-puppetboard02
-    SUBDIR += py-puppetboard03
     SUBDIR += py-py-restclient
     SUBDIR += py-pySmartDL
     SUBDIR += py-pyjwt
@@ -1799,9 +1811,7 @@
     SUBDIR += py-wsgiauth
     SUBDIR += py-wsgidav
     SUBDIR += py-yarl
-    SUBDIR += py-zope.app.wsgi
     SUBDIR += pyblosxom
-    SUBDIR += pycarddav
     SUBDIR += pyjamas
     SUBDIR += qdecoder
     SUBDIR += qhttpengine
@@ -1933,7 +1943,7 @@
     SUBDIR += rubygem-gollum-rugged_adapter
     SUBDIR += rubygem-gon-rails5
     SUBDIR += rubygem-gon-rails50
-    SUBDIR += rubygem-gon-rails52
+    SUBDIR += rubygem-gon-rails60
     SUBDIR += rubygem-hackpad-cli
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-haml-coderay
@@ -1946,6 +1956,7 @@
     SUBDIR += rubygem-hamlit-rails-rails50
     SUBDIR += rubygem-hashicorp-checkpoint
     SUBDIR += rubygem-heroics
+    SUBDIR += rubygem-heroics00
     SUBDIR += rubygem-heroku-api
     SUBDIR += rubygem-heroku-nav
     SUBDIR += rubygem-hpricot
@@ -1982,15 +1993,18 @@
     SUBDIR += rubygem-kaminari-actionview-rails5
     SUBDIR += rubygem-kaminari-actionview-rails50
     SUBDIR += rubygem-kaminari-actionview-rails52
+    SUBDIR += rubygem-kaminari-actionview-rails60
     SUBDIR += rubygem-kaminari-activerecord
     SUBDIR += rubygem-kaminari-activerecord-rails5
     SUBDIR += rubygem-kaminari-activerecord-rails50
     SUBDIR += rubygem-kaminari-activerecord-rails52
+    SUBDIR += rubygem-kaminari-activerecord-rails60
     SUBDIR += rubygem-kaminari-core
     SUBDIR += rubygem-kaminari-rails4
     SUBDIR += rubygem-kaminari-rails5
     SUBDIR += rubygem-kaminari-rails50
     SUBDIR += rubygem-kaminari-rails52
+    SUBDIR += rubygem-kaminari-rails60
     SUBDIR += rubygem-kensa
     SUBDIR += rubygem-kubeclient
     SUBDIR += rubygem-layout_yullio_generator
@@ -2000,6 +2014,7 @@
     SUBDIR += rubygem-lograge
     SUBDIR += rubygem-lograge-rails5
     SUBDIR += rubygem-lograge-rails52
+    SUBDIR += rubygem-lograge-rails60
     SUBDIR += rubygem-maruku
     SUBDIR += rubygem-mechanize
     SUBDIR += rubygem-merb-assets
@@ -2079,6 +2094,7 @@
     SUBDIR += rubygem-redis-rails-rails5
     SUBDIR += rubygem-redis-rails-rails50
     SUBDIR += rubygem-redis-rails-rails52
+    SUBDIR += rubygem-redis-rails-rails60
     SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-responders
     SUBDIR += rubygem-responders-rails5
@@ -2134,7 +2150,7 @@
     SUBDIR += rubygem-wasabi
     SUBDIR += rubygem-webdrivers
     SUBDIR += rubygem-webmock
-    SUBDIR += rubygem-webpack-rails-rails52
+    SUBDIR += rubygem-webpack-rails-rails60
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
     SUBDIR += rubygem-websocket-driver
@@ -2157,6 +2173,7 @@
     SUBDIR += shellinabox
     SUBDIR += shttpd
     SUBDIR += silicon
+    SUBDIR += simple-web-server
     SUBDIR += sitecopy
     SUBDIR += skytemplate
     SUBDIR += slowcgi
@@ -2212,6 +2229,7 @@
     SUBDIR += tivoka
     SUBDIR += tntnet
     SUBDIR += tokyopromenade
+    SUBDIR += tomcat-devel
     SUBDIR += tomcat-native
     SUBDIR += tomcat7
     SUBDIR += tomcat85
@@ -2222,11 +2240,8 @@
     SUBDIR += trac-TracGoogleAnalytics
     SUBDIR += trac-accountmanager
     SUBDIR += trac-advancedticketworkflow
-    SUBDIR += trac-attachmentpolicy
     SUBDIR += trac-autocomplete
-    SUBDIR += trac-bzr
     SUBDIR += trac-ccselector
-    SUBDIR += trac-childtickets
     SUBDIR += trac-customfieldadmin
     SUBDIR += trac-datefield
     SUBDIR += trac-defaultcc
@@ -2239,7 +2254,6 @@
     SUBDIR += trac-fivestarvote
     SUBDIR += trac-fullblog
     SUBDIR += trac-fullblognotification
-    SUBDIR += trac-gantt
     SUBDIR += trac-graphviz
     SUBDIR += trac-iniadmin
     SUBDIR += trac-keywords
@@ -2261,10 +2275,8 @@
     SUBDIR += trac-tickettemplate
     SUBDIR += trac-timingandestimation
     SUBDIR += trac-tocmacro
-    SUBDIR += trac-tracdragdrop
     SUBDIR += trac-tweakui
     SUBDIR += trac-vote
-    SUBDIR += trac-watchlist
     SUBDIR += trac-wikigoodies
     SUBDIR += trac-wikinotification
     SUBDIR += trac-wikitemplates
@@ -2310,7 +2322,6 @@
     SUBDIR += twiki-TwistyContrib
     SUBDIR += twiki-TwistyPlugin
     SUBDIR += twiki-WysiwygPlugin
-    SUBDIR += twill
     SUBDIR += twms
     SUBDIR += typo3-8
     SUBDIR += typo3-9
@@ -2320,6 +2331,7 @@
     SUBDIR += unit
     SUBDIR += unit-perl
     SUBDIR += unit-php
+    SUBDIR += uwebsockets
     SUBDIR += uwsgi
     SUBDIR += uwsgitop
     SUBDIR += validator
@@ -2389,7 +2401,6 @@
     SUBDIR += yarn
     SUBDIR += yarn-node10
     SUBDIR += yarn-node12
-    SUBDIR += yarn-node8
     SUBDIR += yaws
     SUBDIR += you-get
     SUBDIR += yourls

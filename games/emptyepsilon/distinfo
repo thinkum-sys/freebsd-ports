@@ -1,5 +1,5 @@
-TIMESTAMP = 1579148927
-SHA256 (daid-EmptyEpsilon-EE-2020.01.15_GH0.tar.gz) = cdb4cc8ee7fe94a27d67b0d0a23fd4df33d5e42d5f26bf86d46da37cb7c1d045
-SIZE (daid-EmptyEpsilon-EE-2020.01.15_GH0.tar.gz) = 255543659
-SHA256 (daid-SeriousProton-EE-2020.01.15_GH0.tar.gz) = 7aa7e991f79db30b11410c9d9c9ab5a9493fe5d1838c918e547f2c83c0248462
-SIZE (daid-SeriousProton-EE-2020.01.15_GH0.tar.gz) = 608988
+TIMESTAMP = 1586626572
+SHA256 (daid-EmptyEpsilon-EE-2020.04.09_GH0.tar.gz) = 3267076e0220db10ce747a6c906f8a4f960a7d0630d732b711e09988950d1f29
+SIZE (daid-EmptyEpsilon-EE-2020.04.09_GH0.tar.gz) = 248821753
+SHA256 (daid-SeriousProton-EE-2020.04.09_GH0.tar.gz) = debdd0be7ef8a46dcd03af7cb7330006c3c103cf9c26ac8c3cd783419316ec4f
+SIZE (daid-SeriousProton-EE-2020.04.09_GH0.tar.gz) = 1172045

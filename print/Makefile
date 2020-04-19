@@ -17,6 +17,7 @@
     SUBDIR += bibcursed
     SUBDIR += biblio-py
     SUBDIR += bibview
+    SUBDIR += brlaser
     SUBDIR += c2ps
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
@@ -195,6 +196,7 @@
     SUBDIR += py-stapler
     SUBDIR += py-trml2pdf
     SUBDIR += py-ttfautohint-py
+    SUBDIR += py-ufolib2
     SUBDIR += py-weasyprint
     SUBDIR += qpdf
     SUBDIR += qpdfview

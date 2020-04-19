@@ -3,6 +3,7 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v6.0.9/:chromium \
 		https://commondatastorage.googleapis.com/chromium-browser-official/:chromium_official \
@@ -16,7 +17,7 @@ DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}:chromium \
 		electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX}:prefetch
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
 
 LICENSE=	MIT
@@ -162,10 +163,10 @@ PULSEAUDIO_VARS_OFF=	GN_ARGS+=use_pulseaudio=false
 POST_BUILD_TARGETS=	licenses version
 POST_BUILD_DIST_TARGETS=	electron_dist_zip electron_chromedriver_zip electron_mksnapshot_zip
 
-YARN_TIMESTAMP=	1576819964
+YARN_TIMESTAMP=	1582868122
 
 PLIST_SUB=	ELECTRON_VER=${ELECTRON_VER} \
-		PKGNAMESUFFIX=${PKGNAMESUFFIX}
+		ELECTRON_VER_MAJOR=${ELECTRON_VER_MAJOR}
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>

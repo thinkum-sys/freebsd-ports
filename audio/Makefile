@@ -53,15 +53,19 @@
     SUBDIR += baresip
     SUBDIR += baudline
     SUBDIR += bcg729
+    SUBDIR += bchoppr-lv2
     SUBDIR += beatslash-lv2
     SUBDIR += beep
     SUBDIR += beets
+    SUBDIR += bharvestr-lv2
+    SUBDIR += bjumblr-lv2
     SUBDIR += blop
     SUBDIR += blop-lv2
     SUBDIR += bristol
     SUBDIR += bs2b-lv2
     SUBDIR += bsequencer-lv2
     SUBDIR += bshapr-lv2
+    SUBDIR += bslizr-lv2
     SUBDIR += cadence
     SUBDIR += calf-lv2
     SUBDIR += cam
@@ -81,6 +85,7 @@
     SUBDIR += chordpack
     SUBDIR += chromaprint
     SUBDIR += clementine-player
+    SUBDIR += cli-visualizer
     SUBDIR += clunk
     SUBDIR += cmp3
     SUBDIR += cmt
@@ -108,7 +113,6 @@
     SUBDIR += deadbeef-spectrogram-plugin
     SUBDIR += deadbeef-vu-meter-plugin
     SUBDIR += deadbeef-waveform-seekbar-plugin
-    SUBDIR += decibel-audio-player
     SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += discid
@@ -233,6 +237,7 @@
     SUBDIR += gnustep-cdplayer
     SUBDIR += goattracker
     SUBDIR += gogglesmm
+    SUBDIR += gonic
     SUBDIR += goobox
     SUBDIR += gqradio
     SUBDIR += gradio
@@ -335,7 +340,6 @@
     SUBDIR += id3ren
     SUBDIR += id3tool
     SUBDIR += id3v2
-    SUBDIR += idjc
     SUBDIR += ifp-line
     SUBDIR += infamous-plugins-lv2
     SUBDIR += invada-studio-plugins-lv2
@@ -348,6 +352,7 @@
     SUBDIR += jalv
     SUBDIR += jalv-select
     SUBDIR += jamin
+    SUBDIR += jamulus
     SUBDIR += jid3lib
     SUBDIR += juk
     SUBDIR += juke
@@ -461,7 +466,7 @@
     SUBDIR += lollypop
     SUBDIR += lpac
     SUBDIR += lsp-plugins-lv2
-    SUBDIR += lua51-mpd
+    SUBDIR += lua-mpd
     SUBDIR += luppp
     SUBDIR += lv2
     SUBDIR += lv2file
@@ -485,6 +490,7 @@
     SUBDIR += milkytracker
     SUBDIR += mio2jack
     SUBDIR += mixer.app
+    SUBDIR += mixertui
     SUBDIR += mixmos
     SUBDIR += mixxx
     SUBDIR += mixxx21
@@ -613,6 +619,7 @@
     SUBDIR += pear-Text_Spell_Audio
     SUBDIR += penguinsap
     SUBDIR += pianobar
+    SUBDIR += pianobooster
     SUBDIR += pianod2
     SUBDIR += picard
     SUBDIR += picard-plugins
@@ -653,7 +660,6 @@
     SUBDIR += py-music21
     SUBDIR += py-musicbrainzngs
     SUBDIR += py-mutagen
-    SUBDIR += py-ogg
     SUBDIR += py-openal
     SUBDIR += py-opuslib
     SUBDIR += py-py-jack
@@ -669,7 +675,6 @@
     SUBDIR += py-soundscrape
     SUBDIR += py-speechrecognition
     SUBDIR += py-tagpy
-    SUBDIR += py-vorbis
     SUBDIR += py-wavio
     SUBDIR += py-webrtcvad
     SUBDIR += py-xmms2
@@ -680,7 +685,6 @@
     SUBDIR += qsampler
     SUBDIR += qsynth
     SUBDIR += quimup
-    SUBDIR += raul
     SUBDIR += rawrec
     SUBDIR += re
     SUBDIR += rebot3
@@ -725,7 +729,6 @@
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
-    SUBDIR += shout-idjc
     SUBDIR += sidplay
     SUBDIR += sidplay2
     SUBDIR += sidplayer
@@ -740,7 +743,6 @@
     SUBDIR += sonic-visualiser
     SUBDIR += sorcer-lv2
     SUBDIR += sound-juicer
-    SUBDIR += soundconverter
     SUBDIR += soundgrab
     SUBDIR += soundkonverter
     SUBDIR += soundtouch
@@ -772,6 +774,7 @@
     SUBDIR += stymulator
     SUBDIR += suil
     SUBDIR += supercollider
+    SUBDIR += surge-synthesizer-lv2
     SUBDIR += sweep
     SUBDIR += swh-lv2
     SUBDIR += swhplugins

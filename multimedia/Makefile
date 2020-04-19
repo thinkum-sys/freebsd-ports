@@ -19,6 +19,7 @@
     SUBDIR += avidemux
     SUBDIR += avidemux-cli
     SUBDIR += avidemux-plugins
+    SUBDIR += avidemux-qt5
     SUBDIR += avinfo
     SUBDIR += baka-mplayer
     SUBDIR += bcmatroska2
@@ -33,7 +34,6 @@
     SUBDIR += celluloid
     SUBDIR += cheese
     SUBDIR += chilitags
-    SUBDIR += cinelerra-gg
     SUBDIR += clipgrab
     SUBDIR += clive
     SUBDIR += clutter-gst
@@ -155,7 +155,6 @@
     SUBDIR += gstreamer1-vaapi
     SUBDIR += gstreamer1-validate
     SUBDIR += gstreamermm
-    SUBDIR += gtk-recordmydesktop
     SUBDIR += gtk-youtube-viewer
     SUBDIR += gxine
     SUBDIR += handbrake
@@ -245,6 +244,7 @@
     SUBDIR += lxdvdrip
     SUBDIR += m2tstoavi
     SUBDIR += m2vrequantiser
+    SUBDIR += makemkv
     SUBDIR += mediainfo
     SUBDIR += mencoder
     SUBDIR += mimms
@@ -285,8 +285,15 @@
     SUBDIR += naludump
     SUBDIR += nordlicht
     SUBDIR += nostt
+    SUBDIR += obs-audio-spectralizer
+    SUBDIR += obs-ndi
     SUBDIR += obs-qtwebkit
+    SUBDIR += obs-scrab
+    SUBDIR += obs-streamfx
     SUBDIR += obs-studio
+    SUBDIR += obs-transition-matrix
+    SUBDIR += obs-v4l2sink
+    SUBDIR += obs-websocket
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
     SUBDIR += ogmtools
@@ -312,10 +319,10 @@
     SUBDIR += phonon-vlc
     SUBDIR += photofilmstrip
     SUBDIR += php-pHash
+    SUBDIR += pipewire
     SUBDIR += pitivi
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
-    SUBDIR += plexwatch
     SUBDIR += podcastdl
     SUBDIR += poe
     SUBDIR += ppm2fli
@@ -360,7 +367,6 @@
     SUBDIR += recmpeg
     SUBDIR += recordmydesktop
     SUBDIR += replex
-    SUBDIR += rox-videothumbnail
     SUBDIR += rtmpdump
     SUBDIR += rubygem-av
     SUBDIR += rubygem-clutter-gstreamer

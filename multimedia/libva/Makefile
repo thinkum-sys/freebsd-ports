@@ -1,10 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	libva
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	bc8a12af319f.patch:-p1 c2c339d12ef0.patch:-p1
 PATCHFILES+=	c2a431cc3cab.patch:-p1 # https://github.com/intel/libva/pull/292
 PATCHFILES+=	5cfcd31635b1.patch:-p1 # https://github.com/intel/libva/pull/292
 PATCHFILES+=	f601fc614d8d.patch:-p1 # https://github.com/intel/libva/pull/363
@@ -28,7 +30,6 @@ GH_ACCOUNT=	intel
 # -lpthread is not necessary if pthread_getthreadid_np is a libc stub
 LDFLAGS+=	${LDFLAGS_${OPSYS}_${OSREL}}
 LDFLAGS_FreeBSD_11.3=	-lpthread
-LDFLAGS_FreeBSD_12.0=	-lpthread
 
 OPTIONS_DEFINE=	GLX WAYLAND X11
 OPTIONS_DEFAULT=GLX WAYLAND X11

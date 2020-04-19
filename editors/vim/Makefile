@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.2.0205
+PORTVERSION=	8.2.0491
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -31,7 +32,6 @@ GNU_CONFIGURE=	yes
 PLIST_SUB=	VIM_VER=${VIM_VER}
 PORTDATA?=	${VIM_VER}
 PORTSCOUT=	ignore:1
-REINPLACE_ARGS=	-i ''
 SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
 VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 
@@ -96,6 +96,8 @@ CONSOLE_CONFIGURE_OFF=	--enable-xim --enable-fontset
 CONSOLE_PLIST_SUB=	GUI="@comment " DESKTOP="@comment "
 CONSOLE_VARS=		GUI=no
 
+GNOME_CONFIGURE_ENABLE=	canberra
+GNOME_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 GNOME_PLIST_SUB=	GUI="" DESKTOP=""
 GNOME_IMPLIES=		NLS
 GNOME_USE=		GNOME=gdkpixbuf2,libgnomeui XORG=ice,sm,xorgproto,x11,xpm,xt
@@ -134,6 +136,7 @@ PERL_CONFIGURE_ENABLE=	perlinterp
 PERL_USES=		perl5
 
 PYTHON_USES=		python
+PYTHON_USES_OFF=	python:env
 
 RUBY_CONFIGURE_ENABLE=	rubyinterp
 RUBY_USE=		RUBY=yes
@@ -167,8 +170,6 @@ post-patch:
 	${ECHO_CMD} '#define SYS_GVIMRC_FILE "'${ETCDIR}'/gvimrc"' >> ${WRKSRC}/src/feature.h
 	${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|g; s|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/src/auto/configure
-# Work around qa-check shebang error
-	${REINPLACE_CMD} -e 1d ${WRKSRC}/runtime/tools/demoserver.py
 
 post-configure:
 # Needed when devel/libsysinfo is installed:
@@ -188,13 +189,16 @@ post-install:
 
 # OPTIONS
 post-patch-CTAGS_BASE-on:
-	${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -Ee 's!ctags -R ?\.!${FIND} . -type f \\| ${XARGS} ctags!g'
+	${FIND} ${WRKSRC}/runtime -name 'menu*.vim' | ${XARGS} ${GREP} -l 'ctags -R' | \
+		${XARGS} ${REINPLACE_CMD} -Ee 's!ctags -R ?\.!${FIND} . -type f \\| ${XARGS} ctags!g'
 
 post-patch-CTAGS_EXUBERANT-on:
-	${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R|exctags -R|g'
+	${FIND} ${WRKSRC}/runtime -name 'menu*.vim' | ${XARGS} ${GREP} -l 'ctags -R' | \
+		${XARGS} ${REINPLACE_CMD} -e 's|ctags -R|exctags -R|g'
 
 post-patch-CTAGS_UNIVERSAL-on:
-	${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R|uctags -R|g'
+	${FIND} ${WRKSRC}/runtime -name 'menu*.vim' | ${XARGS} ${GREP} -l 'ctags -R' | \
+		${XARGS} ${REINPLACE_CMD} -e 's|ctags -R|uctags -R|g'
 
 post-patch-LUA-on:
 	${REINPLACE_CMD} -e 's|set dummy lua;|set dummy ${LUA_CMD};|g' ${WRKSRC}/src/auto/configure

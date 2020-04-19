@@ -10,6 +10,7 @@
     SUBDIR += Sockets
     SUBDIR += activemq
     SUBDIR += adasockets
+    SUBDIR += addrwatch
     SUBDIR += afpfs-ng
     SUBDIR += aget
     SUBDIR += akonadi-calendar
@@ -156,6 +157,7 @@
     SUBDIR += fiche
     SUBDIR += file2pcap
     SUBDIR += findmtu
+    SUBDIR += findomain
     SUBDIR += flent
     SUBDIR += flower
     SUBDIR += flowgrep
@@ -239,6 +241,7 @@
     SUBDIR += haproxy18
     SUBDIR += haproxy19
     SUBDIR += haproxy21
+    SUBDIR += hblock
     SUBDIR += hexinject
     SUBDIR += hinfo
     SUBDIR += hlmaster
@@ -280,6 +283,7 @@
     SUBDIR += ipsvd
     SUBDIR += ipxe
     SUBDIR += irrd
+    SUBDIR += irrd-legacy
     SUBDIR += isboot-kmod
     SUBDIR += isc-dhcp44-client
     SUBDIR += isc-dhcp44-relay
@@ -294,6 +298,7 @@
     SUBDIR += jsch
     SUBDIR += jumpgate
     SUBDIR += jwhois
+    SUBDIR += k6
     SUBDIR += kafka
     SUBDIR += kafkacat
     SUBDIR += kalarmcal
@@ -343,9 +348,11 @@
     SUBDIR += ldapsh
     SUBDIR += leproxy
     SUBDIR += lft
+    SUBDIR += libarcus
     SUBDIR += libarms
     SUBDIR += libbgpdump
     SUBDIR += libcapn
+    SUBDIR += libcharon
     SUBDIR += libcmis
     SUBDIR += libcoap
     SUBDIR += libdaq
@@ -395,7 +402,7 @@
     SUBDIR += libproxy-python
     SUBDIR += libproxy-webkit3
     SUBDIR += librdkafka
-    SUBDIR += librsync2
+    SUBDIR += librsync
     SUBDIR += libsignal
     SUBDIR += libsocket++
     SUBDIR += libsrtp2
@@ -404,6 +411,7 @@
     SUBDIR += libtrace
     SUBDIR += libunp
     SUBDIR += libusipp
+    SUBDIR += libusrsctp
     SUBDIR += libutp
     SUBDIR += libvncserver
     SUBDIR += libwebsockets
@@ -422,10 +430,7 @@
     SUBDIR += lla
     SUBDIR += ltm
     SUBDIR += lualdap
-    SUBDIR += lualdap-51
     SUBDIR += luasocket
-    SUBDIR += luasocket-51
-    SUBDIR += luasocket-53
     SUBDIR += lvwimax
     SUBDIR += mDNSResponder
     SUBDIR += macchanger
@@ -434,6 +439,7 @@
     SUBDIR += mailcommon
     SUBDIR += mailimporter
     SUBDIR += malo-firmware-kmod
+    SUBDIR += mcjoin
     SUBDIR += mdns-repeater
     SUBDIR += measurement-kit
     SUBDIR += mediastreamer
@@ -889,7 +895,6 @@
     SUBDIR += p5-XMLRPC-Lite
     SUBDIR += p5-XPC
     SUBDIR += p5-ZMQ-FFI
-    SUBDIR += p5-ZeroMQ
     SUBDIR += p5-ip2location-perl
     SUBDIR += p5-ldap2pf
     SUBDIR += p5-ldap2pw
@@ -985,7 +990,6 @@
     SUBDIR += pimdd
     SUBDIR += pipsecd
     SUBDIR += pjsip
-    SUBDIR += pjsip-extsrtp
     SUBDIR += pkt-gen
     SUBDIR += pktanon
     SUBDIR += pload
@@ -1044,7 +1048,6 @@
     SUBDIR += py-ldap0
     SUBDIR += py-ldap3
     SUBDIR += py-ldappool
-    SUBDIR += py-ldaptor
     SUBDIR += py-libcloud
     SUBDIR += py-libdnet
     SUBDIR += py-libfte
@@ -1072,6 +1075,7 @@
     SUBDIR += py-port-for
     SUBDIR += py-portend
     SUBDIR += py-pyenet
+    SUBDIR += py-pyfixbuf
     SUBDIR += py-pygeoip
     SUBDIR += py-pyicap
     SUBDIR += py-pynamecheap
@@ -1088,6 +1092,7 @@
     SUBDIR += py-python-bitcoinrpc
     SUBDIR += py-python-ceilometerclient
     SUBDIR += py-python-cinderclient
+    SUBDIR += py-python-cinderclient5
     SUBDIR += py-python-designateclient
     SUBDIR += py-python-glanceclient
     SUBDIR += py-python-heatclient
@@ -1136,11 +1141,9 @@
     SUBDIR += py-wmi-query
     SUBDIR += py-wolframalpha
     SUBDIR += py-wsproto
-    SUBDIR += py-xmlrpc
     SUBDIR += py-zeep
     SUBDIR += py-zeroconf
     SUBDIR += py-zope.proxy
-    SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pyrad
     SUBDIR += qadsl
@@ -1352,6 +1355,7 @@
     SUBDIR += ryu
     SUBDIR += s3ql
     SUBDIR += samba410
+    SUBDIR += samba411
     SUBDIR += samplicator
     SUBDIR += savvycan
     SUBDIR += sbd
@@ -1468,6 +1472,7 @@
     SUBDIR += toonel
     SUBDIR += torsocks
     SUBDIR += traefik
+    SUBDIR += traefik2
     SUBDIR += traff
     SUBDIR += trafshow
     SUBDIR += trafshow3
@@ -1478,11 +1483,12 @@
     SUBDIR += tshark
     SUBDIR += tshark-lite
     SUBDIR += tsocks
-    SUBDIR += tucan
+    SUBDIR += tunneller
     SUBDIR += turnserver
     SUBDIR += twitux
     SUBDIR += u6rd
     SUBDIR += ucarp
+    SUBDIR += udpbroadcastrelay
     SUBDIR += udptunnel
     SUBDIR += udpxy
     SUBDIR += udt
@@ -1500,6 +1506,7 @@
     SUBDIR += uriparser
     SUBDIR += urlendec
     SUBDIR += usbredir
+    SUBDIR += usockets
     SUBDIR += utftpd
     SUBDIR += v2ray
     SUBDIR += vblade

@@ -2,9 +2,11 @@
 
 PORTNAME=	libavif
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.4
-PORTREVISION=	2
+DISTVERSION=	0.7.1
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	22c57ea6176d.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for encoding and decoding .avif files
@@ -12,7 +14,9 @@ COMMENT=	Library for encoding and decoding .avif files
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake localbase:ldflags pkgconfig
+LIB_DEPENDS=	libpng.so:graphics/png
+
+USES=		cmake compiler:c11 jpeg localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	AOMediaCodec

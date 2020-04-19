@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.12.0
+DISTVERSION=	1.14.2
 _PKG_VERSION=	${DISTVERSION}
-PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 #MASTER_SITES=	\
 #		http://files.etoilebsd.net/${PORTNAME}/ \
@@ -18,14 +17,14 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 HAS_CONFIGURE=	yes
 PORTDOCS=	NEWS
 PORTSCOUT=	ignore:1
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix="${PREFIX}"
 CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
 
-# Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
+# Use a submake as 'deinstall install' needs to reevaluate PKG_REGISTER
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
@@ -81,6 +80,9 @@ PKG_DEPENDS=
 .if !defined(CROSS_TOOLCHAIN)
 PKG_BIN=	${WRKSRC}/src/pkg-static
 .endif
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

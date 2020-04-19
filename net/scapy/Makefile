@@ -3,7 +3,7 @@
 
 PORTNAME=	scapy
 PORTVERSION=	2.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,7 +40,7 @@ MANUF_RUN_DEPENDS=	${LOCALBASE}/share/wireshark/manuf:net/wireshark
 MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f.fp:net-mgmt/p0f
 PYCRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR}
-PYX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyX>0:graphics/py-PyX@${PY_FLAVOR}
+PYX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyx>0:graphics/py-pyx@${PY_FLAVOR}
 QUESO_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/queso.conf.sample:net/queso
 SOX_RUN_DEPENDS=	${LOCALBASE}/bin/sox:audio/sox
 
@@ -66,10 +66,10 @@ post-patch:
 	@${REINPLACE_CMD} "s,share/man/man1,man/man1," ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} "s,pdflatex,pdftex," ${WRKSRC}/scapy/extlib.py
 	@${REINPLACE_CMD} "s,/usr/share/,${LOCALBASE}/share/," \
-		${WRKSRC}/scapy/data.py \
-		${WRKSRC}/scapy/modules/nmap.py \
-	       	${WRKSRC}/scapy/utils6.py
+		${WRKSRC}/scapy/modules/nmap.py
 	@${REINPLACE_CMD} "s,/etc/,${LOCALBASE}/etc/," \
 		${WRKSRC}/scapy/modules/p0f.py
+	@${REINPLACE_CMD} 's|"use" in line|"use" in line or "nhop" in line|' \
+		${WRKSRC}/scapy/arch/unix.py
 
 .include <bsd.port.post.mk>

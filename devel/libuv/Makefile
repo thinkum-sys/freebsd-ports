@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libuv
-PORTVERSION=	1.34.2
+PORTVERSION=	1.36.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -14,15 +15,12 @@ LICENSE_NAME=	NODE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-TEST_DEPENDS=	gyp:devel/py-gyp
-
 USE_GITHUB=	yes
 
-USES=		autoreconf libtool pathfix pkgconfig python:test shebangfix
+USES=		autoreconf libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-SHEBANG_FILES=	gyp_uv.py
 
 TEST_TARGET=	check
 

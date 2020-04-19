@@ -52,6 +52,7 @@
     SUBDIR += lha
     SUBDIR += lha-ac
     SUBDIR += lhasa
+    SUBDIR += lib1541img
     SUBDIR += libarc
     SUBDIR += libarchive
     SUBDIR += libcabinet
@@ -70,7 +71,7 @@
     SUBDIR += lizard
     SUBDIR += lrzip
     SUBDIR += lua-lzlib
-    SUBDIR += lua51-zlib
+    SUBDIR += lua-zlib
     SUBDIR += lzfse
     SUBDIR += lzip
     SUBDIR += lziprecover
@@ -193,7 +194,6 @@
     SUBDIR += qpress
     SUBDIR += quazip
     SUBDIR += rar
-    SUBDIR += rox-archive
     SUBDIR += rpm2cpio
     SUBDIR += rpm4
     SUBDIR += rubygem-archive-tar-minitar
@@ -243,6 +243,7 @@
     SUBDIR += upx
     SUBDIR += urbackup-client
     SUBDIR += urbackup-server
+    SUBDIR += v1541commander
     SUBDIR += xar
     SUBDIR += xarchive
     SUBDIR += xarchiver

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vscode
-DISTVERSION=	1.41.1
+DISTVERSION=	1.44.2
 CATEGORIES=	editors
 MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
@@ -9,11 +9,8 @@ DISTFILES=	node-v${NODE_VER}-headers${EXTRACT_SUFX}:node_headers \
 		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
 		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} \
-		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
 
 LICENSE=	MIT
@@ -24,8 +21,8 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	zip:archivers/zip \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		rg:textproc/ripgrep \
-		npm:www/npm-node10 \
-		yarn:www/yarn-node10
+		npm-node10>0:www/npm-node10 \
+		yarn-node10>0:www/yarn-node10
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libatspi.so:accessibility/at-spi2-core \
 		libsnappy.so:archivers/snappy \
@@ -64,7 +61,7 @@ USES=		desktop-file-utils gl gmake gnome jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	26076a4de974ead31f97692a0d32f90d735645c0
+SOURCE_COMMIT_HASH=	ff915844119ce9485abfe8aa9076ec76b5300ddd
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -75,6 +72,7 @@ USE_GNOME=	atk cairo pango gdkpixbuf2 gtk30 libxml2 libxslt
 
 USE_LDCONFIG=	${DATADIR}
 
+# See ${WRKSRC}/remote/.yarnrc for NODE_VER
 NODE_VER=	12.4.0
 
 SHEBANG_REGEX=	./(extensions|resources|scripts|src)/.*\.sh$$
@@ -84,10 +82,11 @@ DATADIR=	${PREFIX}/share/code-oss
 TMPDIR=		${WRKDIR}
 
 MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
+		ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
 		PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 \
 		XDG_CACHE_HOME=${WRKDIR}/.cache
 
-ELECTRON_DIR=	${.CURDIR}/../../devel/electron6
+ELECTRON_DIR=	${.CURDIR}/../../devel/electron7
 .include	"${ELECTRON_DIR}/Makefile.version"
 
 pre-everything::
@@ -99,19 +98,6 @@ pre-everything::
 	@${ECHO_MSG} "MAX_FILES_${PORTNAME}=4096"
 	@${ECHO_MSG} ""
 
-post-extract:
-	# setup node headers for node-gyp
-	${MKDIR} ${WRKDIR}/.cache/node-gyp/${NODE_VER}
-	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/node-v${NODE_VER}-headers${EXTRACT_SUFX} \
-		--strip-components 1 -C ${WRKDIR}/.cache/node-gyp/${NODE_VER}
-	${ECHO_CMD} 9 > ${WRKDIR}/.cache/node-gyp/${NODE_VER}/installVersion
-	# setup electron download cache for UI smoke tests
-	# ${MKDIR} ${WRKDIR}/.cache/electron
-	# ${SED} -e 's/freebsd${OSREL:R}/freebsd/' ${DISTDIR}/${DIST_SUBDIR}/SHASUMS256.txt > \
-	# 	${WRKDIR}/.cache/electron/SHASUMS256.txt-${ELECTRON_VER}
-	# ${CP} ${DISTDIR}/${DIST_SUBDIR}/electron-v${ELECTRON_VER}-freebsd${OSREL:R}-x64.zip \
-	# 	${WRKDIR}/.cache/electron/electron-v${ELECTRON_VER}-freebsd-x64.zip
-
 post-patch:
 	# force use of electron version matching port one
 	${REINPLACE_CMD} -E 's|^(target ").*(")$$|\1${ELECTRON_VER}\2|' \
@@ -119,6 +105,8 @@ post-patch:
 	# setup yarnrc for using local node headers
 	${ECHO_CMD} 'nodedir "${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers"' >> \
 		${WRKSRC}/.yarnrc
+	${ECHO_CMD} 'nodedir "${WRKDIR}/node-v${NODE_VER}"' >> \
+		${WRKSRC}/remote/.yarnrc
 	# setup yarnrc for offline node_modules installation
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' >> \
 		${WRKSRC}/.yarnrc
@@ -211,6 +199,7 @@ do-install:
 	${RM} -r ${STAGEDIR}${DATADIR}/node_headers
 	${RM} -r ${STAGEDIR}${DATADIR}/resources/completions
 	${RLN} ${STAGEDIR}${DATADIR}/bin/code-oss ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 pre-test:
 	# setup electron dependency for unit tests
@@ -233,7 +222,7 @@ make-yarn-cache:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		yarn --frozen-lockfile --ignore-scripts
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		yarn postinstall --frozen-lockfile --ignore-scripts
+		yarn postinstall --frozen-lockfile
 	cd ${WRKDIR} && ${TAR} -czf \
 		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} yarn-offline-cache
 

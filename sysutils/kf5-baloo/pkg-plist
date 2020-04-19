@@ -11,6 +11,7 @@ include/KF5/Baloo/Baloo/Query
 include/KF5/Baloo/Baloo/QueryRunnable
 include/KF5/Baloo/Baloo/ResultIterator
 include/KF5/Baloo/Baloo/TagListJob
+include/KF5/Baloo/baloo/baloosettings.h
 include/KF5/Baloo/baloo/core_export.h
 include/KF5/Baloo/baloo/file.h
 include/KF5/Baloo/baloo/filemonitor.h
@@ -421,6 +422,8 @@ share/locale/sk/LC_MESSAGES/kio5_timeline.mo
 share/locale/sl/LC_MESSAGES/baloo_file5.mo
 share/locale/sl/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/sl/LC_MESSAGES/balooctl5.mo
+share/locale/sl/LC_MESSAGES/baloodb5.mo
+share/locale/sl/LC_MESSAGES/balooengine5.mo
 share/locale/sl/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/sl/LC_MESSAGES/baloosearch5.mo
 share/locale/sl/LC_MESSAGES/balooshow5.mo

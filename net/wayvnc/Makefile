@@ -1,8 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	wayvnc
-PORTVERSION=	s20200129
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	net
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	720b127dee00.patch:-p1 # https://github.com/any1/wayvnc/pull/31
+PATCHFILES+=	d61007661480.patch:-p1 # https://github.com/any1/wayvnc/pull/31
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VNC server for wlroots-based compositors
@@ -22,7 +28,7 @@ USE_XORG=	pixman
 USE_GL=		egl glesv2
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	any1
-GH_TAGNAME=	908ba0f
 PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
 
 .include <bsd.port.mk>

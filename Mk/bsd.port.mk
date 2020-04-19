@@ -42,8 +42,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # OPSYS			- Portability clause.  This is the operating system the
 #				  makefile is being used on.  Automatically set to
 #				  "FreeBSD," "NetBSD," or "OpenBSD" as appropriate.
-# OSREL			- The release version (numeric) of the operating system.
-# OSVERSION		- The value of __FreeBSD_version.
+# OSREL			- The release version of the operating system as a text
+#				  string (e.g., "12.1").
+# OSVERSION		- The operating system version as a comparable integer;
+#				  the value of __FreeBSD_version (e.g., 1201000).
 #
 # This is the beginning of the list of all variables that need to be
 # defined in a port, listed in order that they should be included
@@ -1175,7 +1177,7 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC
 .endif
 _EXPORTED_VARS+=	OSVERSION
 
-.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1103000) || \
+.if (${OPSYS} == FreeBSD && (${OSVERSION} < 1103000 || (${OSVERSION} >= 1200000 && ${OSVERSION} < 1201000))) || \
     (${OPSYS} == DragonFly && ${DFLYVERSION} < 400400)
 _UNSUPPORTED_SYSTEM_MESSAGE=	Ports Collection support for your ${OPSYS} version has ended, and no ports\
 								are guaranteed to build on this system. Please upgrade to a supported release.
@@ -4332,9 +4334,8 @@ missing-packages:
 # Install missing dependencies from package
 install-missing-packages:
 	@_dirs=$$(${MISSING-DEPENDS-LIST}); \
-	if [ -n "$${_dirs}" ]; then \
-		${SU_CMD} "${PKG_BIN} install -A $$(${ECHO_CMD} "$${_dirs}" | ${SED} "s%${PORTSDIR}/%%g")"; \
-	fi
+	${ECHO_CMD} "$${_dirs}" | ${SED} "s%${PORTSDIR}/%%g" | \
+		${SU_CMD} "${XARGS} -o ${PKG_BIN} install -A"
 
 ################################################################
 # Everything after here are internal targets and really

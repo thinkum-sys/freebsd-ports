@@ -162,6 +162,7 @@
     SUBDIR += cfengine313
     SUBDIR += cfengine314
     SUBDIR += cfengine315
+    SUBDIR += checkrestart
     SUBDIR += chgrep
     SUBDIR += chyves
     SUBDIR += cinnamon-control-center
@@ -275,11 +276,12 @@
     SUBDIR += dtc
     SUBDIR += dtpstree
     SUBDIR += du2ps
+    SUBDIR += dua-cli
     SUBDIR += duff
     SUBDIR += dunst
     SUBDIR += dupd
     SUBDIR += duplicity
-    SUBDIR += duplicity-devel
+    SUBDIR += duplicity07
     SUBDIR += duply
     SUBDIR += dupmerge
     SUBDIR += dvd+rw-tools
@@ -362,6 +364,7 @@
     SUBDIR += fsbackup
     SUBDIR += fsc
     SUBDIR += fsearch
+    SUBDIR += fselect
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
@@ -433,7 +436,6 @@
     SUBDIR += gnome-control-center
     SUBDIR += gnome-mount
     SUBDIR += gnome-power-manager
-    SUBDIR += gnome-schedule
     SUBDIR += gnome-settings-daemon
     SUBDIR += gnome-system-monitor
     SUBDIR += gnome_subr
@@ -458,10 +460,6 @@
     SUBDIR += gstreamer-plugins-hal
     SUBDIR += gstreamer1-plugins-cdio
     SUBDIR += gtk-imonc
-    SUBDIR += hachoir-metadata
-    SUBDIR += hachoir-subfile
-    SUBDIR += hachoir-urwid
-    SUBDIR += hachoir-wx
     SUBDIR += hal
     SUBDIR += hal-info
     SUBDIR += hardlink
@@ -495,6 +493,7 @@
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
+    SUBDIR += iichid
     SUBDIR += immortal
     SUBDIR += incron
     SUBDIR += inotify-tools
@@ -753,6 +752,7 @@
     SUBDIR += nsysctl
     SUBDIR += ntfy
     SUBDIR += nut
+    SUBDIR += nut-devel
     SUBDIR += nvclock
     SUBDIR += nvme-cli
     SUBDIR += nvramtool
@@ -850,6 +850,7 @@
     SUBDIR += p5-arclog
     SUBDIR += p5-reslog
     SUBDIR += packer
+    SUBDIR += packmule
     SUBDIR += pacman
     SUBDIR += paicc
     SUBDIR += paladin
@@ -952,7 +953,6 @@
     SUBDIR += pwgen
     SUBDIR += pwsafe
     SUBDIR += pxattr
-    SUBDIR += py-XenAPI
     SUBDIR += py-analyzemft
     SUBDIR += py-ansible-lint
     SUBDIR += py-ansible-runner
@@ -967,7 +967,6 @@
     SUBDIR += py-cpuinfo
     SUBDIR += py-cron-descriptor
     SUBDIR += py-croniter
-    SUBDIR += py-crontab
     SUBDIR += py-diffoscope
     SUBDIR += py-dirsync
     SUBDIR += py-distro
@@ -978,7 +977,6 @@
     SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
     SUBDIR += py-filelock
-    SUBDIR += py-freenas.cli
     SUBDIR += py-glances
     SUBDIR += py-gmailfs-fuse
     SUBDIR += py-google-compute-engine
@@ -1004,6 +1002,7 @@
     SUBDIR += py-psutil121
     SUBDIR += py-ptyprocess
     SUBDIR += py-python-consul
+    SUBDIR += py-python-crontab
     SUBDIR += py-python-nomad
     SUBDIR += py-pytsk
     SUBDIR += py-pywatchman
@@ -1075,6 +1074,7 @@
     SUBDIR += roottail
     SUBDIR += rovclock
     SUBDIR += rpi-firmware
+    SUBDIR += rsfetch
     SUBDIR += rshim-user-space
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
@@ -1272,6 +1272,7 @@
     SUBDIR += syslog-ng323
     SUBDIR += syslog-ng324
     SUBDIR += syslog-ng325
+    SUBDIR += syslog-ng326
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
@@ -1312,6 +1313,7 @@
     SUBDIR += tracker-miners
     SUBDIR += tree
     SUBDIR += tren
+    SUBDIR += triton
     SUBDIR += trueos-libqt5
     SUBDIR += ts
     SUBDIR += tss
@@ -1358,6 +1360,7 @@
     SUBDIR += u-boot-pine64
     SUBDIR += u-boot-pine64-lts
     SUBDIR += u-boot-pinebook
+    SUBDIR += u-boot-qemu-arm
     SUBDIR += u-boot-riotboard
     SUBDIR += u-boot-rock64
     SUBDIR += u-boot-rockpro64
@@ -1380,6 +1383,7 @@
     SUBDIR += udfclient
     SUBDIR += uefi-edk2-bhyve
     SUBDIR += uefi-edk2-bhyve-csm
+    SUBDIR += uefi-edk2-bhyve-devel
     SUBDIR += uefi-edk2-qemu
     SUBDIR += ufetch
     SUBDIR += ufs_copy
