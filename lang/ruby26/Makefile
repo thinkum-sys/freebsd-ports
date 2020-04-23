@@ -73,7 +73,24 @@ CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}
 CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 
+## conditional dtrace suport
+## - also in lang/ruby25 and lang/ruby27
+OPTIONS_DEFINE_amd64=	${"${OPSYS:MFreeBSD}" != "":?DTRACE:}
+OPTIONS_DEFINE_i386=	${OPTIONS_DEFINE_amd64}
+DTRACE_DESC=		Build with dtrace support
+. if exists(/usr/sbin/dtrace)
+DTRACE_CONFIGURE_ON=	--enable-dtrace
+. endif
+DTRACE_CONFIGURE_OFF=	--disable-dtrace
+
 .include <bsd.port.pre.mk>
+
+.if !empty(SELETED_OPTIONS:MDTRACE) && !exists(/usr/sbin/dtrace)
+## NB could fail here, such as to ensure that this would not be
+## missed in the build log. That would not match the port's
+## earlier configuration for conditional dtrace build support.
+WARNING+=	"DTRACE option enabled for ${PKGORIGIN} but dtrace not installed under /usr/sbin"
+.endif
 
 # PORTREVISION/PORTEPOCH hack
 
@@ -83,14 +100,6 @@ _SUF1=	_${PORTREVISION}
 
 .if ${PORTEPOCH} != 0
 _SUF2=	,${PORTEPOCH}
-.endif
-
-.if ${OPSYS} == "FreeBSD"
-.if exists(/usr/sbin/dtrace) && (${ARCH} == amd64 || ${ARCH} == i386)
-CONFIGURE_ARGS+=--enable-dtrace
-.else
-CONFIGURE_ARGS+=--disable-dtrace
-.endif
 .endif
 
 # keep in sync with all platforms where libunwind is available
