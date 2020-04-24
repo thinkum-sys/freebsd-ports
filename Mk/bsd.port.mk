@@ -3936,8 +3936,12 @@ checksum: fetch
 # readable by the port requesting the dependency.
 # This will also fix broken distribution files where directories don't have the
 # executable bit on.
+.ifdef MK_FIXUP_MODES
 extract-fixup-modes:
 	@${CHMOD} -R u+w,a+rX ${WRKDIR}
+.else
+extract-fixup-modes: .PHONY
+.endif
 
 ################################################################
 # The special package-building targets
