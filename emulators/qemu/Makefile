@@ -64,7 +64,7 @@ GTK3_USE=	GNOME=gdkpixbuf2,gtk30,vte3 XORG=x11,xext
 GTK3_USES=	gettext gl
 JPEG_CONFIGURE_OFF=	--disable-vnc-jpeg
 JPEG_USES=		jpeg
-NCURSES_USES=		ncurses:base
+NCURSES_USES=		ncurses
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 OPENGL_USE=	GL=gl
 OPENGL_USES=	gl
