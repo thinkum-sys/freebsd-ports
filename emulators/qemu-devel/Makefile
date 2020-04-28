@@ -97,9 +97,6 @@ DEBUG_VARS+=		CONFIGURE_ARGS+=--enable-debug-info
 PORTDOCS=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
 	       	qemu-qmp-ref.html qemu-qmp-ref.txt specs/.buildinfo specs/*
 
-## NB specify extra-ldflags only once w/ no quote marks,
-## or it will miss the system libfdt
-
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS=	--localstatedir=/var \
