@@ -19,7 +19,8 @@ LIB_DEPENDS=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libepoxy.so:graphics/libepoxy \
-		libpcre2-8.so:devel/pcre2
+		libpcre2-8.so:devel/pcre2 \
+		libfdt.so>=1.6.0:sysutils/dtc
 
 USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t perl5 \
 		pkgconfig python:build tar:xz xorg
@@ -37,7 +38,7 @@ MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
 OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL \
 		VDE CDROM_DMA PCAP USBREDIR X86_TARGETS \
-		STATIC_LINK DOCS NCURSES
+		STATIC_LINK DOCS NCURSES DEBUG
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
 SASL_DESC=		cyrus-sasl dependency (vnc encryption)
@@ -49,7 +50,8 @@ USBREDIR_DESC=		usb device network redirection (experimental!)
 X86_TARGETS_DESC=	Build only x86 system targets
 STATIC_LINK_DESC=	Statically link the executables
 VDE_DESC=		vde dependency (for vde networking)
-OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES VDE
+DEBUG_DESC=		Build with debugging support
+OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES VDE DEBUG
 OPTIONS_SUB=	yes
 X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
 X11_USES=	sdl
@@ -82,26 +84,32 @@ VDE_CONFIGURE_OFF=	--disable-vde
 STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK3 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
-NCURSES_USES=		ncurses:base
+NCURSES_USES=		ncurses
 SAMBA_USES=		samba:run # smbd
 SAMBA_CONFIGURE_ON=	--smbd=${LOCALBASE}/sbin/smbd
 DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
 			sphinx-build:textproc/py-sphinx
 DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
+DEBUG_VARS=		WITH_DEBUG=1 CONFIGURE_ARGS+=--enable-debug
+DEBUG_VARS+=		CONFIGURE_ARGS+=--enable-debug-info
 
 PORTDOCS=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
 	       	qemu-qmp-ref.html qemu-qmp-ref.txt specs/.buildinfo specs/*
 
+## NB specify extra-ldflags only once w/ no quote marks,
+## or it will miss the system libfdt
+
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CONFIGURE_ARGS=	--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
-		--extra-ldflags=-L\"${LOCALBASE}/lib\" --enable-debug \
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--extra-ldflags=-L/usr/lib\ -L${LOCALBASE}/lib \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --enable-docs --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
-		--enable-debug-info --python=${PYTHON_CMD} \
+		 --python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 INSTALLS_ICONS=	yes
+
 
 .include <bsd.port.options.mk>
 

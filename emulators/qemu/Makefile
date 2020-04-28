@@ -17,7 +17,9 @@ LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libepoxy.so:graphics/libepoxy \
-		libpcre2-8.so:devel/pcre2
+		libpcre2-8.so:devel/pcre2 \
+		libfdt.so>=1.6.0:sysutils/dtc
+
 
 .if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
@@ -36,9 +38,10 @@ MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
 OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL \
 		VDE CDROM_DMA PCAP USBREDIR X86_TARGETS \
-		STATIC_LINK DOCS NCURSES
+		STATIC_LINK DOCS NCURSES DEBUG
 CDROM_DMA_DESC=		IDE CDROM DMA
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
+DEBUG_DESC=		Build with debugging support
 JPEG_DESC=		jpeg dependency (vnc lossy compression)
 PCAP_DESC=		pcap dependency (networking with bpf)
 PNG_DESC=		png dependency (vnc compression)
@@ -52,6 +55,8 @@ OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES
 OPTIONS_SUB=	yes
 CURL_CONFIGURE_OFF=	--disable-curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+DEBUG_VARS=		WITH_DEBUG=1 CONFIGURE_ARGS+=--enable-debug
+DEBUG_VARS+=		CONFIGURE_ARGS+=--enable-debug-info
 DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
 			sphinx-build:textproc/py-sphinx
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
@@ -64,7 +69,7 @@ GTK3_USE=	GNOME=gdkpixbuf2,gtk30,vte3 XORG=x11,xext
 GTK3_USES=	gettext gl
 JPEG_CONFIGURE_OFF=	--disable-vnc-jpeg
 JPEG_USES=		jpeg
-NCURSES_USES=		ncurses:base
+NCURSES_USES=		ncurses
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 OPENGL_USE=	GL=gl
 OPENGL_USES=	gl
@@ -97,14 +102,19 @@ INSTALLS_ICONS=		yes
 PORTDOCS?=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
 	       	qemu-qmp-ref.html qemu-qmp-ref.txt specs/.buildinfo specs/*
 
+## NB specify extra-ldflags only once w/ no quote marks,
+## or it will miss the system libfdt
+
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CONFIGURE_ARGS?=	--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
-		--extra-ldflags=-L\"${LOCALBASE}/lib\" --disable-libssh --enable-debug \
+CONFIGURE_ARGS?=	--localstatedir=/var \
+		--extra-ldflags=-L/usr/lib\ -L${LOCALBASE}/lib \
+		--disable-libssh --enable-debug \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --enable-docs --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--enable-debug-info --python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
+
 
 .include <bsd.port.options.mk>
 
